@@ -1,0 +1,56 @@
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+h1, h2 {
+  color: #343a40;
+}
+
+p {
+  color: #6c757d;
+}
+
+.card {
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  background-color: #f8f9fa;
+}
+
+
+
+/* Ensure all project cards are the same height */
+.project-card {
+  min-height: 300px; /* Set a minimum height for the cards */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensures even spacing between the title and the paragraph */
+}
+
+.project-card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Optional: Truncate long text with ellipsis */
+.project-card p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+/* Adjust the row to ensure equal height for cards */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch; /* Makes sure all cards in a row have the same height */
+}
+
+
+
+
+
