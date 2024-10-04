@@ -1,0 +1,80 @@
+.sidebar {
+    width: 200px;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-right: 1px solid #ddd;
+  }
+  
+  .sidebar h3 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .sidebar ul {
+    padding: 0;
+  }
+  
+  .sidebar li {
+    list-style: none;
+    margin: 10px 0;
+  }
+  
+  .sidebar a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .sidebar a:hover {
+    color: #007bff;
+  }
+  
+  .project-card {
+    transition: transform 0.3s;
+  }
+  
+  .project-card:hover {
+    transform: scale(1.05);
+  }
+  .container {
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .portfolio-header {
+    background: #f8f9fa;
+  }
+  
+  .card {
+    transition: transform 0.2s;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .developer-img {
+    border: 5px solid #6c757d;
+  }
+  
+  .contact-icon {
+    color: #007bff;
+    transition: transform 0.3s;
+  }
+  
+  .contact-icon:hover {
+    transform: scale(1.1);
+  }
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  .animated-emoji {
+    display: inline-block;
+    animation: bounce 1s infinite;
+  }
+    

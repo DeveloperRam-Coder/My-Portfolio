@@ -3,10 +3,11 @@ import { FaReact, FaNodeJs, FaAngular, FaEnvelope, FaLinkedin, FaTwitter, FaGith
 import { SiMongodb, SiExpress, SiTypescript, SiJavascript, SiCsharp, SiPostgresql } from 'react-icons/si';
 import proimg from "./assets/pro.jpeg";
 import ScrollIndicator from './components/ScrollIndicator'; // Import ScrollIndicator
+import './App.css'; // Import custom CSS for styles
 
 const App = () => {
   return (
-    <div className="container-sm py-5 text-dark ">
+    <div className="container-sm py-5 text-dark">
       <ScrollIndicator />
 
       {/* Header Section */}
@@ -25,105 +26,66 @@ const App = () => {
       </header>
 
       {/* About Me Section */}
-      <section id="about-me" className="my-2 py-2 text-dark border-bottom">
-        <h2>About Me</h2>
+      <Card title="About Me">
         <p>I'm a passionate full-stack developer with extensive experience in creating dynamic web applications using cutting-edge technologies. I thrive on solving complex problems and delivering high-quality software solutions.</p>
         <p>My journey in web development started with a fascination for building intuitive user interfaces and has evolved into a deep interest in full-stack technologies. I enjoy both the creative aspects of frontend development and the logic-driven world of backend programming.</p>
-      </section>
+      </Card>
 
       {/* Professional Summary */}
-      <section id="professional-summary" className="my-2 py-2 text-dark border-bottom">
-        <h2>Professional Summary</h2>
+      <Card title="Professional Summary">
         <p>Highly skilled Full Stack Developer with over X years of experience in MERN, MEAN, and .NET technologies. Expert in modern JavaScript frameworks, server-side programming, and database management. Adept at building scalable, secure, and high-performance applications. Proficient in Agile methodologies, DevOps practices, and continuous integration/deployment.</p>
         <p>My goal is to contribute to innovative projects that make a meaningful impact. I enjoy collaborating with cross-functional teams to deliver high-quality solutions that meet client needs and improve user experiences.</p>
-      </section>
+      </Card>
 
       {/* Skills Section */}
-      <section id="skills" className="my-2 py-2 text-dark border-bottom">
-        <h2>Key Skills</h2>
+      <Card title="Key Skills">
         <div className="row">
-          <div className="col-md-3 mb-4">
-            <h5>Languages</h5>
-            <ul className="list-unstyled">
-              <li className='mt-3'><FaHtml5 className="me-2" style={{ color: '#E34F26', fontSize: '24px' }} /> HTML5</li>
-              <li className='mt-3'><FaCss3 className="me-2" style={{ color: '#1572B6', fontSize: '24px' }} /> CSS3</li>
-              <li className='mt-3'><SiJavascript className="me-2" style={{ color: '#F7DF1E', fontSize: '24px' }} /> JavaScript</li>
-              <li className='mt-3'><SiTypescript className="me-2" style={{ color: '#007ACC', fontSize: '24px' }} /> TypeScript</li>
-              <li className='mt-3'><SiCsharp className="me-2" style={{ color: '#9B5A1F', fontSize: '24px' }} /> C#</li>
-            </ul>
-          </div>
-          <div className="col-md-3 mb-4">
-            <h5>Frontend</h5>
-            <ul className="list-unstyled">
-              <li className='mt-3'><FaBootstrap className="me-2" style={{ color: '#563D7C', fontSize: '24px' }} /> Bootstrap</li>
-              <li className='mt-3'><FaReact className="me-2" style={{ color: '#61DBFB', fontSize: '24px' }} /> React</li>
-              <li className='mt-3'><FaAngular className="me-2" style={{ color: '#DD0031', fontSize: '24px' }} /> Angular</li>
-            </ul>
-          </div>
-          <div className="col-md-3 mb-4">
-            <h5>Backend</h5>
-            <ul className="list-unstyled">
-              <li className='mt-3'><FaNodeJs className="me-2" style={{ color: '#68A063', fontSize: '24px' }} /> Node.js</li>
-              <li className='mt-3'><SiExpress className="me-2" style={{ color: '#000000', fontSize: '24px' }} /> Express.js</li>
-              <li className='mt-3'><SiPostgresql className="me-2" style={{ color: '#336791', fontSize: '24px' }} /> PostgreSQL</li>
-              <li className='mt-3'><SiMongodb className="me-2" style={{ color: '#47A248', fontSize: '24px' }} /> MongoDB</li>
-            </ul>
-          </div>
-          <div className="col-md-3 mb-4">
-            <h5>DevOps & Tools</h5>
-            <ul className="list-unstyled">
-              <li className='mt-3'><FaGithub className="me-2" style={{ color: '#181717', fontSize: '24px' }} /> Git & Version Control</li>
-              <li className='mt-3'><span className="me-2" style={{ fontSize: '24px' }}>🛠️</span> Docker</li>
-              <li className='mt-3'><span className="me-2" style={{ fontSize: '24px' }}>⚙️</span> CI/CD (Jenkins, Travis CI)</li>
-            </ul>
-          </div>
+          <SkillColumn title="Languages" skills={[
+            { icon: <FaHtml5 style={{ color: '#E34F26' }} />, text: 'HTML5' },
+            { icon: <FaCss3 style={{ color: '#1572B6' }} />, text: 'CSS3' },
+            { icon: <SiJavascript style={{ color: '#F7DF1E' }} />, text: 'JavaScript' },
+            { icon: <SiTypescript style={{ color: '#007ACC' }} />, text: 'TypeScript' },
+            { icon: <SiCsharp style={{ color: '#9B5A1F' }} />, text: 'C#' },
+          ]} />
+          <SkillColumn title="Frontend" skills={[
+            { icon: <FaBootstrap style={{ color: '#563D7C' }} />, text: 'Bootstrap' },
+            { icon: <FaReact style={{ color: '#61DBFB' }} />, text: 'React' },
+            { icon: <FaAngular style={{ color: '#DD0031' }} />, text: 'Angular' },
+          ]} />
+          <SkillColumn title="Backend" skills={[
+            { icon: <FaNodeJs style={{ color: '#68A063' }} />, text: 'Node.js' },
+            { icon: <SiExpress style={{ color: '#000000' }} />, text: 'Express.js' },
+            { icon: <SiPostgresql style={{ color: '#336791' }} />, text: 'PostgreSQL' },
+            { icon: <SiMongodb style={{ color: '#47A248' }} />, text: 'MongoDB' },
+          ]} />
+          <SkillColumn title="DevOps & Tools" skills={[
+            { icon: <FaGithub style={{ color: '#181717' }} />, text: 'Git & Version Control' },
+            { icon: <span role="img" aria-label="tools" style={{ fontSize: '24px' }}>🛠️</span>, text: 'Docker' },
+            { icon: <span role="img" aria-label="settings" style={{ fontSize: '24px' }}>⚙️</span>, text: 'CI/CD (Jenkins, Travis CI)' },
+          ]} />
         </div>
-      </section>
+      </Card>
 
       {/* Projects Section */}
-      <section id="projects" className="my-2 py-2 text-dark border-bottom">
-        <h2>Projects</h2>
+      <Card title="Projects">
         <div className="row">
-          <div className="col-md-4 mb-4">
-            <div className="project-card p-3 border rounded" style={{ background: 'linear-gradient(135deg, #f5f7fa, #c3cfe2)' }}>
-              <h5>Project One: Task Tracker</h5>
-              <p>A web application built using React, Node.js, and MongoDB for managing daily tasks. Features include user authentication, task categorization, and progress tracking.</p>
-              <a href="#" className="btn btn-primary">View Project</a>
-              <FaReact className="mt-2" style={{ color: '#61DBFB', fontSize: '24px' }} />
-            </div>
-          </div>
-          <div className="col-md-4 mb-4">
-            <div className="project-card p-3 border rounded" style={{ background: 'linear-gradient(135deg, #f5f7fa, #c3cfe2)' }}>
-              <h5>Project Two: E-commerce Platform</h5>
-              <p>An Angular application for an online store, allowing users to browse products, add to cart, and make purchases. Utilizes RESTful APIs for data management.</p>
-              <a href="https://developerram-coder.github.io/Mood-Wear/" className="btn btn-primary">View Project</a>
-              <FaAngular className="mt-2" style={{ color: '#DD0031', fontSize: '24px' }} />
-            </div>
-          </div>
-          <div className="col-md-4 mb-4">
-            <div className="project-card p-3 border rounded" style={{ background: 'linear-gradient(135deg, #f5f7fa, #c3cfe2)' }}>
-              <h5>Project Three: Blogging Platform</h5>
-              <p>A full-stack application using the MERN stack where users can create, read, update, and delete blog posts. Includes features for comments and user profiles.</p>
-              <a href="#" className="btn btn-primary">View Project</a>
-              <FaNodeJs className="mt-2" style={{ color: '#68A063', fontSize: '24px' }} />
-            </div>
-          </div>
+          <ProjectCard title="Project One: Task Tracker" description="A web application built using React, Node.js, and MongoDB for managing daily tasks. Features include user authentication, task categorization, and progress tracking." link="#" icon={<FaReact style={{ color: '#61DBFB' }} />} />
+          <ProjectCard title="Project Two: E-commerce Platform" description="An Angular application for an online store, allowing users to browse products, add to cart, and make purchases. Utilizes RESTful APIs for data management." link="https://developerram-coder.github.io/Mood-Wear/" icon={<FaAngular style={{ color: '#DD0031' }} />} />
+          <ProjectCard title="Project Three: Blogging Platform" description="A full-stack application using the MERN stack where users can create, read, update, and delete blog posts. Includes features for comments and user profiles." link="#" icon={<FaNodeJs style={{ color: '#68A063' }} />} />
         </div>
-      </section>
+      </Card>
 
       {/* Certifications Section */}
-      <section id="certifications" className="my-2 py-2 text-dark border-bottom">
-        <h2>Certifications</h2>
+      <Card title="Certifications">
         <ul className="list-unstyled">
           <li className="mt-3">Certified JavaScript Developer - XYZ Institute</li>
           <li className="mt-3">Full Stack Development Certification - ABC Academy</li>
           <li className="mt-3">React Developer Certification - Online Course</li>
         </ul>
-      </section>
+      </Card>
 
       {/* Contact Section */}
-      <section id="contact" className="my-2 py-2 text-dark border-bottom">
-        <h2>Contact Me</h2>
+      <Card title="Contact Me">
         <p>If you would like to get in touch, feel free to reach out through any of the platforms below:</p>
         <div className="d-flex justify-content-center">
           <a href="mailto:ramgopalbsr9@gmail.com" className="contact-icon mx-3"><FaEnvelope size={40} /></a>
@@ -131,7 +93,7 @@ const App = () => {
           <a href="https://twitter.com/yourprofile" className="contact-icon mx-3"><FaTwitter size={40} /></a>
           <a href="https://github.com/yourprofile" className="contact-icon mx-3"><FaGithub size={40} /></a>
         </div>
-      </section>
+      </Card>
 
       {/* Footer */}
       <footer className="text-center py-3">
@@ -140,5 +102,43 @@ const App = () => {
     </div>
   );
 };
+
+// Card Component
+const Card = ({ title, children }) => (
+  <div className="card my-4" style={{ background: '#f9f9f9', borderRadius: '10px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)' }}>
+    <div className="card-body">
+      <h5 className="card-title">{title}</h5>
+      {children}
+    </div>
+  </div>
+);
+
+// SkillColumn Component
+const SkillColumn = ({ title, skills }) => (
+  <div className="col-md-3 mb-4">
+    <h5>{title}</h5>
+    <ul className="list-unstyled">
+      {skills.map((skill, index) => (
+        <li key={index} className='mt-3'>
+          {skill.icon}
+          {skill.text}
+        </li>
+      ))}
+    </ul>
+  </div>
+);
+
+// ProjectCard Component
+const ProjectCard = ({ title, description, link, icon }) => (
+  <div className="col-md-4 mb-4">
+    <div className="card" style={{ background: '#e9ecef' }}>
+      <div className="card-body">
+        <h5 className="card-title">{icon} {title}</h5>
+        <p className="card-text">{description}</p>
+        <a href={link} className="btn btn-primary">View Project</a>
+      </div>
+    </div>
+  </div>
+);
 
 export default App;
